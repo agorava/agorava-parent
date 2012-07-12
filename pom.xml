@@ -67,10 +67,18 @@
 
             <dependency>
                 <groupId>org.agorava</groupId>
-                <artifactId>agorava-core-cdi</artifactId>
+                <artifactId>agorava-core-impl-cdi</artifactId>
                 <version>${core.version}</version>
                 <scope>compile</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.agorava</groupId>
+                <artifactId>agorava-core-impl</artifactId>
+                <version>${core.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.scribe</groupId>
