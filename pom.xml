@@ -43,6 +43,7 @@
         <commons-beanutils.version>1.8.3</commons-beanutils.version>
         <mockito.version>1.9.0</mockito.version>
         <solder.version>3.1.1.Final</solder.version>
+        <servlet.version>3.0.1</servlet.version>
         <arquillian.version>1.0.1.Final</arquillian.version>
         <mockito.version>1.9.0</mockito.version>
         <junit.version>4.10</junit.version>
@@ -133,6 +134,13 @@
                 <artifactId>solder-impl</artifactId>
                 <version>${solder.version}</version>
                 <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <scope>provided</scope>
+                <version>${servlet.version}</version>
             </dependency>
 
             <dependency>
