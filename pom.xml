@@ -139,8 +139,8 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <scope>provided</scope>
                 <version>${servlet.version}</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
