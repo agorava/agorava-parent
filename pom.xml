@@ -43,6 +43,7 @@
         <commons-beanutils.version>1.8.3</commons-beanutils.version>
         <mockito.version>1.9.0</mockito.version>
         <solder.version>3.1.1.Final</solder.version>
+        <deltaspike.version>0.3-incubating-SNAPSHOT</deltaspike.version>
         <servlet.version>3.0.1</servlet.version>
         <arquillian.version>1.0.1.Final</arquillian.version>
         <mockito.version>1.9.0</mockito.version>
@@ -135,6 +136,20 @@
                 <artifactId>solder-impl</artifactId>
                 <version>${solder.version}</version>
                 <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.deltaspike.core</groupId>
+                <artifactId>deltaspike-core-api</artifactId>
+                <version>${deltaspike.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.deltaspike.core</groupId>
+                <artifactId>deltaspike-core-impl</artifactId>
+                <version>${deltaspike.version}</version>
+                <scope>runtime</scope>
             </dependency>
 
             <dependency>
