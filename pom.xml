@@ -42,13 +42,14 @@
         <commons-collection.version>3.2.1</commons-collection.version>
         <commons-beanutils.version>1.8.3</commons-beanutils.version>
         <mockito.version>1.9.0</mockito.version>
-        <solder.version>3.1.1.Final</solder.version>
+        <!-- solder.version>3.1.1.Final</solder.version -->
         <deltaspike.version>0.3-incubating</deltaspike.version>
         <servlet.version>3.0.1</servlet.version>
         <arquillian.version>1.0.1.Final</arquillian.version>
         <mockito.version>1.9.0</mockito.version>
         <junit.version>4.10</junit.version>
         <slf4j.version>1.6.4</slf4j.version>
+        <jboss-logging.version>3.1.2.GA</jboss-logging.version>
     </properties>
 
     <dependencyManagement>
@@ -131,10 +132,17 @@
                 </exclusions>
             </dependency>
 
+			<dependency>
+				<groupId>org.jboss.logging</groupId>
+				<artifactId>jboss-logging</artifactId>
+				<version>${jboss-logging.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
             <dependency>
-                <groupId>org.jboss.solder</groupId>
-                <artifactId>solder-impl</artifactId>
-                <version>${solder.version}</version>
+                <groupId>org.agorava</groupId>
+                <artifactId>solder-generics-impl</artifactId>
+                <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
 
