@@ -14,12 +14,11 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.agorava</groupId>
     <artifactId>agorava-parent</artifactId>
-    <version>0.5.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Agorava Parent Project</name>
     <description>This artefact provides all dependencies used in all Agorava module</description>
@@ -68,6 +67,7 @@
         <maven-javadoc-plugin.version>2.8.1</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>1.3</maven-gpg-plugin.version>
         <nexus-maven-plugin.version>2.1</nexus-maven-plugin.version>
+        <buildnumber-maven-plugin.version>1.2</buildnumber-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -380,6 +380,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>buildnumber-maven-plugin</artifactId>
+                        <version>${buildnumber-maven-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>validate-scm</id>
