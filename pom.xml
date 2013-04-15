@@ -60,7 +60,7 @@
         <jboss-logging.version>3.1.2.GA</jboss-logging.version>
         <jboss-javaee-6.0.version>1.0.0.Final</jboss-javaee-6.0.version>
         <arquillian-weld-ee-embedded.version>1.0.0.CR3</arquillian-weld-ee-embedded.version>
-        <weld-core.version>1.1.5.Final</weld-core.version>
+        <weld-core.version>1.1.9.Final</weld-core.version>
         <slf4j-simple.version>1.6.4</slf4j-simple.version>
         <maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
