@@ -42,7 +42,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <cdi.version>1.0-SP4</cdi.version>
-        <agorava-core.version>0.5.2</agorava-core.version>
+        <agorava-core.version>0.6.0-SNAPSHOT</agorava-core.version>
         <scribe.version>1.3.0</scribe.version>
         <jackson.version>1.9.2</jackson.version>
         <guava.version>11.0.2</guava.version>
