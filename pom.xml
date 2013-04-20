@@ -14,12 +14,11 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.agorava</groupId>
     <artifactId>agorava-parent</artifactId>
-    <version>0.5.2-SNAPSHOT</version>
+    <version>0.6.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Agorava Parent Project</name>
     <description>This artefact provides all dependencies used in all Agorava module</description>
@@ -43,7 +42,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <cdi.version>1.0-SP4</cdi.version>
-        <agorava-core.version>0.5.2-SNAPSHOT</agorava-core.version>
+        <agorava-core.version>0.5.2</agorava-core.version>
         <scribe.version>1.3.0</scribe.version>
         <jackson.version>1.9.2</jackson.version>
         <guava.version>11.0.2</guava.version>
