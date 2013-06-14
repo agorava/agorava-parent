@@ -381,10 +381,10 @@
 
     <profiles>
         <profile>
-            <id>release</id>
+            <id>release-profile</id>
             <activation>
                 <property>
-                    <name>release</name>
+                    <name>performRelease</name>
                 </property>
             </activation>
             <build>
