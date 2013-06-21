@@ -56,7 +56,7 @@
         <arquillian.version>1.0.4.Final</arquillian.version>
         <mockito.version>1.9.0</mockito.version>
         <junit.version>4.10</junit.version>
-        <slf4j.version>1.7.5</slf4j.version>
+
         <jboss-javaee-6.0.version>1.0.0.Final</jboss-javaee-6.0.version>
         <arquillian-weld-ee-embedded.version>1.0.0.CR7</arquillian-weld-ee-embedded.version>
         <!-- Weld version in AS 7.1.1 -->
@@ -189,13 +189,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>compile</scope>
-            </dependency>
-
-            <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-all</artifactId>
                 <version>${mockito.version}</version>
@@ -241,6 +234,7 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>${slf4j-simple.version}</version>
+                <scope>test</scope>
             </dependency>
 
             <!-- OWB specific dependencies-->
