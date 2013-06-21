@@ -56,8 +56,7 @@
         <arquillian.version>1.0.4.Final</arquillian.version>
         <mockito.version>1.9.0</mockito.version>
         <junit.version>4.10</junit.version>
-        <slf4j.version>1.6.4</slf4j.version>
-        <jboss-logging.version>3.1.2.GA</jboss-logging.version>
+        <slf4j.version>1.7.5</slf4j.version>
         <jboss-javaee-6.0.version>1.0.0.Final</jboss-javaee-6.0.version>
         <arquillian-weld-ee-embedded.version>1.0.0.CR7</arquillian-weld-ee-embedded.version>
         <!-- Weld version in AS 7.1.1 -->
@@ -166,13 +165,6 @@
                         <artifactId>commons-logging</artifactId>
                     </exclusion>
                 </exclusions>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jboss.logging</groupId>
-                <artifactId>jboss-logging</artifactId>
-                <version>${jboss-logging.version}</version>
-                <scope>provided</scope>
             </dependency>
 
             <dependency>
