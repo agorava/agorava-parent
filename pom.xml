@@ -51,7 +51,7 @@
         <commons-collection.version>3.2.1</commons-collection.version>
         <commons-beanutils.version>1.8.3</commons-beanutils.version>
         <mockito.version>1.9.0</mockito.version>
-        <deltaspike.version>0.3-incubating</deltaspike.version>
+        <deltaspike.version>0.4</deltaspike.version>
         <servlet.version>3.0.1</servlet.version>
         <arquillian.version>1.0.4.Final</arquillian.version>
         <mockito.version>1.9.0</mockito.version>
@@ -84,6 +84,7 @@
         <geronimo-jta-1.1-spec.version>1.1.1</geronimo-jta-1.1-spec.version>
 
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+        <shrinkwrap-resolver.version>2.0.0-beta-3</shrinkwrap-resolver.version>
     </properties>
 
     <dependencyManagement>
@@ -200,6 +201,15 @@
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.jboss.shrinkwrap.resolver</groupId>
+                <artifactId>shrinkwrap-resolver-bom</artifactId>
+                <version>${shrinkwrap-resolver.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
 
 
