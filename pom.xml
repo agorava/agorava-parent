@@ -18,7 +18,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.agorava</groupId>
     <artifactId>agorava-parent</artifactId>
-    <version>0.6.0-SNAPSHOT</version>
+    <version>0.6.0</version>
     <packaging>pom</packaging>
     <name>Agorava Parent Project</name>
     <description>This artefact provides all dependencies used in all Agorava module</description>
@@ -336,7 +336,7 @@
         <connection>scm:git:git://github.com/agorava/agorava-parent.git</connection>
         <developerConnection>scm:git:git@github.com:agorava/agorava-parent.git</developerConnection>
         <url>http://github.com/agorava/agorava-parent</url>
-        <tag>HEAD</tag>
+        <tag>0.6.0</tag>
   </scm>
 
     <developers>
