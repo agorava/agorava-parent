@@ -40,7 +40,7 @@ rules:
        pom-name-pattern-submodule: "JBoss <target-product> Quickstart: <project-folder> - <submodule-folder>"
 
        #Header file pattern
-       header-file: "file:///Users/antoine/dev/agorava/code/agorava-parent/qstools/header.txt"
+       header-file: "https://raw.github.com/agorava/agorava-parent/develop/qstools/header.txt"
 
        #Ignored modules on ModuleDefinedChecker - Checks if all project subdirectories are defined as module
        ignored-modules:
