@@ -71,6 +71,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.jboss.weld</groupId>
+                <artifactId>weld-core</artifactId>
+                <scope>test</scope>
+                <version>${weld.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -139,43 +146,134 @@
 
     <profiles>
         <profile>
-            <id>weld-1.x</id>
+            <!-- The default profile skips all tests, though you can tune
+                it to run just unit tests based on a custom pattern -->
+            <!-- Seperate profiles are provided for running all tests, including
+                Arquillian tests that execute in the specified container -->
+            <id>default</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <dependencyManagement>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jboss.weld</groupId>
-                        <artifactId>weld-core</artifactId>
-                        <version>${weld-core-1.version}</version>
-                    </dependency>
-                </dependencies>
-            </dependencyManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
+
+
+        <profile>
+            <!-- use this profile to compile and test Agorava with Apache OpenWebBeans -->
+            <id>owb</id>
+
+            <properties>
+                <arquillian>OpenWebBeans</arquillian>
+            </properties>
+
+
+            <dependencies>
+                <!-- OWB specific dependencies-->
+                <dependency>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-atinject_1.0_spec</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-jcdi_1.0_spec</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-interceptor_1.1_spec</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.openwebbeans</groupId>
+                    <artifactId>openwebbeans-impl</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.openwebbeans</groupId>
+                    <artifactId>openwebbeans-spi</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.openwebbeans</groupId>
+                    <artifactId>openwebbeans-resource</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-servlet_3.0_spec</artifactId>
+                </dependency>
+
+
+                <dependency>
+                    <groupId>org.apache.openwebbeans.arquillian</groupId>
+                    <artifactId>owb-arquillian-standalone</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>weld-1.x</id>
+            <!-- use this profile to compile and test Agorava with Weld 1 -->
+
+            <properties>
+                <arquillian>weld-ee-embedded-1.1</arquillian>
+                <weld.version>1.1.5.Final</weld.version>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.spec</groupId>
+                    <artifactId>jboss-javaee-6.0</artifactId>
+                    <type>pom</type>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.weld</groupId>
+                    <artifactId>weld-core</artifactId>
+
+                </dependency>
+                <dependency>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-simple</artifactId>
+                </dependency>
+            </dependencies>
+
+        </profile>
+
         <profile>
             <id>weld-2.x</id>
-            <dependencyManagement>
-                <dependencies>
-                    <dependency>
-                        <groupId>javax.enterprise</groupId>
-                        <artifactId>cdi-api</artifactId>
-                        <version>${cdi-1-1.version}</version>
-                        <scope>provided</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.weld</groupId>
-                        <artifactId>weld-core</artifactId>
-                        <version>${weld-core-2.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-simple</artifactId>
-                        <version>${slf4j-simple.version}</version>
-                        <scope>test</scope>
-                    </dependency>
-                </dependencies>
-            </dependencyManagement>
+
+            <properties>
+                <arquillian>weld-ee-embedded-1.1</arquillian>
+                <weld.version>2.0.2.Final</weld.version>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.spec</groupId>
+                    <artifactId>jboss-javaee-6.0</artifactId>
+                    <type>pom</type>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.weld</groupId>
+                    <artifactId>weld-core</artifactId>
+
+                </dependency>
+                <dependency>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-simple</artifactId>
+                </dependency>
+            </dependencies>
+
         </profile>
 
         <profile>
