@@ -20,6 +20,12 @@
     <groupId>org.agorava</groupId>
     <artifactId>agorava-parent</artifactId>
     <version>0.7.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+        </dependency>
+    </dependencies>
     <packaging>pom</packaging>
     <name>Agorava Parent Project</name>
     <description>This artefact provides all dependencies used in all Agorava module</description>
@@ -57,7 +63,7 @@
         <slf4j-simple.version>1.6.4</slf4j-simple.version>
         <cdi-1.version>1.0-SP4</cdi-1.version>
         <cdi-1-1.version>1.1</cdi-1-1.version>
-
+        <cdi.version>${cdi-1.version}</cdi.version>
 
         <maven-jgitflow-plugin.version>1.0-alpha21.1</maven-jgitflow-plugin.version>
     </properties>
@@ -221,7 +227,7 @@
 
             <properties>
                 <arquillian>weld-ee-embedded-1.1</arquillian>
-                <weld.version>1.1.5.Final</weld.version>
+                <weld.version>${weld-core-1.version}</weld.version>
             </properties>
             <dependencies>
                 <dependency>
@@ -236,7 +242,6 @@
                 <dependency>
                     <groupId>org.jboss.weld</groupId>
                     <artifactId>weld-core</artifactId>
-
                 </dependency>
                 <dependency>
                     <groupId>org.slf4j</groupId>
@@ -251,7 +256,8 @@
 
             <properties>
                 <arquillian>weld-ee-embedded-1.1</arquillian>
-                <weld.version>2.0.2.Final</weld.version>
+                <weld.version>${weld-core-2.version}</weld.version>
+                <cdi.version>${cdi-1-1.version}</cdi.version>
             </properties>
             <dependencies>
                 <dependency>
@@ -266,7 +272,6 @@
                 <dependency>
                     <groupId>org.jboss.weld</groupId>
                     <artifactId>weld-core</artifactId>
-
                 </dependency>
                 <dependency>
                     <groupId>org.slf4j</groupId>
