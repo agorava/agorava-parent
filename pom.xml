@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  ~ Copyright 2013 Agorava
+  ~ Copyright 2014 Agorava
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -16,538 +16,540 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.agorava</groupId>
-    <artifactId>agorava-parent</artifactId>
-    <version>0.7.1-SNAPSHOT</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.agorava</groupId>
+	<artifactId>agorava-parent</artifactId>
+	<version>0.7.1-SNAPSHOT</version>
 
-    <packaging>pom</packaging>
-    <name>Agorava Parent Project</name>
-    <description>This artefact provides all dependencies used in all Agorava module</description>
-    <url>http://agorava.org</url>
+	<packaging>pom</packaging>
+	<name>Agorava Parent Project</name>
+	<description>This artefact provides all dependencies used in all Agorava module</description>
+	<url>http://agorava.org</url>
 
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <distribution>repo</distribution>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-        </license>
-    </licenses>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<distribution>repo</distribution>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+		</license>
+	</licenses>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
-        <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
-        <maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
-        <maven-javadoc-plugin.version>2.9</maven-javadoc-plugin.version>
-        <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
-        <nexus-maven-plugin.version>2.1</nexus-maven-plugin.version>
-        <buildnumber-maven-plugin.version>1.2</buildnumber-maven-plugin.version>
-        <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
-        <!-- Weld version in AS 7.1.1 -->
-        <weld-core-1.version>1.1.5.Final</weld-core-1.version>
-        <weld-core-2.version>2.0.2.Final</weld-core-2.version>
-        <slf4j-simple.version>1.6.4</slf4j-simple.version>
-        <cdi-1.version>1.0-SP4</cdi-1.version>
-        <cdi-1-1.version>1.1</cdi-1-1.version>
-        <cdi.version>${cdi-1.version}</cdi.version>
-
-
-        <maven-jgitflow-plugin.version>1.0-alpha26</maven-jgitflow-plugin.version>
-
-        <arquillian.version>1.1.1.Final</arquillian.version>
-        <mockito.version>1.9.0</mockito.version>
-        <junit.version>4.10</junit.version>
-
-        <jboss-javaee-6.0.version>1.0.0.Final</jboss-javaee-6.0.version>
-        <arquillian-weld-ee-embedded.version>1.0.0.CR7</arquillian-weld-ee-embedded.version>
-        <owb-arquillian-standalone.version>1.2.0</owb-arquillian-standalone.version>
-
-        <!-- OpenWebBeans version in TomEE 1.5.1 -->
-        <owb.version>1.1.7</owb.version>
-        <slf4j-simple.version>1.6.4</slf4j-simple.version>
-
-        <!-- Geronimo specs for OpenWebBeans Test -->
-        <geronimo-atinject-1.0-spec.version>1.0</geronimo-atinject-1.0-spec.version>
-        <geronimo-jcdi-1.0-spec.version>1.0</geronimo-jcdi-1.0-spec.version>
-        <geronimo-interceptor-1.1-spec.version>1.0</geronimo-interceptor-1.1-spec.version>
-        <geronimo-servlet-2.5-spec.version>1.2</geronimo-servlet-2.5-spec.version>
-        <geronimo-servlet-3.0-spec.version>1.0</geronimo-servlet-3.0-spec.version>
-        <geronimo-el-2.2-spec.version>1.0.3</geronimo-el-2.2-spec.version>
-        <geronimo-validation-1.0-spec.version>1.1</geronimo-validation-1.0-spec.version>
-        <geronimo-jpa-2.0-spec.version>1.1</geronimo-jpa-2.0-spec.version>
-        <geronimo-jta-1.1-spec.version>1.1.1</geronimo-jta-1.1-spec.version>
-        <shrinkwrap-resolver.version>2.0.0</shrinkwrap-resolver.version>
+		<maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
+		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
+		<maven-javadoc-plugin.version>2.9</maven-javadoc-plugin.version>
+		<maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
+		<nexus-maven-plugin.version>2.1</nexus-maven-plugin.version>
+		<buildnumber-maven-plugin.version>1.2</buildnumber-maven-plugin.version>
+		<maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+		<!-- Weld version in AS 7.1.1 -->
+		<weld-core-1.version>1.1.5.Final</weld-core-1.version>
+		<!-- Weld version in WildFly 8.0.0.Final -->
+		<weld-core-2.version>2.1.2.Final</weld-core-2.version>
+		<slf4j-simple.version>1.6.4</slf4j-simple.version>
+		<cdi-1.version>1.0-SP4</cdi-1.version>
+		<cdi-1-1.version>1.1</cdi-1-1.version>
+		<cdi.version>${cdi-1.version}</cdi.version>
 
 
-        <xbean-finder.version>3.13</xbean-finder.version>
-    </properties>
+		<maven-jgitflow-plugin.version>1.0-alpha26</maven-jgitflow-plugin.version>
 
-    <dependencyManagement>
-        <dependencies>
+		<arquillian.version>1.1.3.Final</arquillian.version>
+		<mockito.version>1.9.0</mockito.version>
+		<junit.version>4.10</junit.version>
 
-            <dependency>
-                <groupId>org.jboss.weld</groupId>
-                <artifactId>weld-core</artifactId>
-                <scope>test</scope>
-                <version>${weld.version}</version>
-            </dependency>
+		<jboss-javaee-6.0.version>1.0.0.Final</jboss-javaee-6.0.version>
+		<arquillian-weld-ee-embedded.version>1.0.0.CR8</arquillian-weld-ee-embedded.version>
+		<owb-arquillian-standalone.version>1.2.0</owb-arquillian-standalone.version>
 
-            <dependency>
-                <groupId>javax.enterprise</groupId>
-                <artifactId>cdi-api</artifactId>
-                <version>${cdi.version}</version>
-            </dependency>
+		<!-- OpenWebBeans version in TomEE 1.5.1 -->
+		<owb.version>1.1.7</owb.version>
+		<slf4j-simple.version>1.6.4</slf4j-simple.version>
 
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-all</artifactId>
-                <version>${mockito.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-            </dependency>
+		<!-- Geronimo specs for OpenWebBeans Test -->
+		<geronimo-atinject-1.0-spec.version>1.0</geronimo-atinject-1.0-spec.version>
+		<geronimo-jcdi-1.0-spec.version>1.0</geronimo-jcdi-1.0-spec.version>
+		<geronimo-interceptor-1.1-spec.version>1.0</geronimo-interceptor-1.1-spec.version>
+		<geronimo-servlet-2.5-spec.version>1.2</geronimo-servlet-2.5-spec.version>
+		<geronimo-servlet-3.0-spec.version>1.0</geronimo-servlet-3.0-spec.version>
+		<geronimo-el-2.2-spec.version>1.0.3</geronimo-el-2.2-spec.version>
+		<geronimo-validation-1.0-spec.version>1.1</geronimo-validation-1.0-spec.version>
+		<geronimo-jpa-2.0-spec.version>1.1</geronimo-jpa-2.0-spec.version>
+		<geronimo-jta-1.1-spec.version>1.1.1</geronimo-jta-1.1-spec.version>
+		<shrinkwrap-resolver.version>2.1.0</shrinkwrap-resolver.version>
 
 
-            <dependency>
-                <groupId>org.jboss.shrinkwrap.resolver</groupId>
-                <artifactId>shrinkwrap-resolver-bom</artifactId>
-                <version>${shrinkwrap-resolver.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
+		<xbean-finder.version>3.13</xbean-finder.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>org.jboss.weld</groupId>
+				<artifactId>weld-core</artifactId>
+				<scope>test</scope>
+				<version>${weld.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.enterprise</groupId>
+				<artifactId>cdi-api</artifactId>
+				<version>${cdi.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${mockito.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
 
 
-            <dependency>
-                <groupId>org.jboss.arquillian</groupId>
-                <artifactId>arquillian-bom</artifactId>
-                <version>${arquillian.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jboss.spec</groupId>
-                <artifactId>jboss-javaee-6.0</artifactId>
-                <version>${jboss-javaee-6.0.version}</version>
-                <type>pom</type>
-                <scope>provided</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jboss.arquillian.container</groupId>
-                <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-                <version>${arquillian-weld-ee-embedded.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.openwebbeans.arquillian</groupId>
-                <artifactId>owb-arquillian-standalone</artifactId>
-                <version>${owb-arquillian-standalone.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jboss.shrinkwrap.resolver</groupId>
-                <artifactId>shrinkwrap-resolver-depchain</artifactId>
-                <version>${shrinkwrap-resolver.version}</version>
-                <scope>test</scope>
-                <type>pom</type>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jboss.arquillian.junit</groupId>
-                <artifactId>arquillian-junit-container</artifactId>
-                <version>${arquillian.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-simple</artifactId>
-                <version>${slf4j-simple.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <!-- OWB specific dependencies-->
-            <dependency>
-                <groupId>org.apache.geronimo.specs</groupId>
-                <artifactId>geronimo-atinject_1.0_spec</artifactId>
-                <version>${geronimo-atinject-1.0-spec.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.geronimo.specs</groupId>
-                <artifactId>geronimo-jcdi_1.0_spec</artifactId>
-                <version>${geronimo-jcdi-1.0-spec.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.geronimo.specs</groupId>
-                <artifactId>geronimo-interceptor_1.1_spec</artifactId>
-                <version>${geronimo-interceptor-1.1-spec.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.openwebbeans</groupId>
-                <artifactId>openwebbeans-impl</artifactId>
-                <version>${owb.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.openwebbeans</groupId>
-                <artifactId>openwebbeans-spi</artifactId>
-                <version>${owb.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.openwebbeans</groupId>
-                <artifactId>openwebbeans-resource</artifactId>
-                <version>${owb.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.openwebbeans</groupId>
-                <artifactId>openwebbeans-web</artifactId>
-                <version>${owb.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.openwebbeans</groupId>
-                <artifactId>openwebbeans-jsf</artifactId>
-                <version>${owb.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.xbean</groupId>
-                <artifactId>xbean-finder-shaded</artifactId>
-                <version>${xbean-finder.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <!--
-                 We currently need this for the CDI test container to emulate the @SessionScoped.
-                 TODO: Finally this should not be necessary anymore.
-             -->
-            <dependency>
-                <groupId>org.apache.geronimo.specs</groupId>
-                <artifactId>geronimo-servlet_3.0_spec</artifactId>
-                <version>${geronimo-servlet-3.0-spec.version}</version>
-                <scope>provided</scope>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
-
-    <scm>
-        <connection>scm:git:git://github.com/agorava/agorava-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:agorava/agorava-parent.git</developerConnection>
-        <url>http://github.com/agorava/agorava-parent</url>
-        <tag>HEAD</tag>
-    </scm>
-
-    <developers>
-        <developer>
-            <name>Antoine Sabot-Durand</name>
-            <url>http://twitter.com/antoine_sd</url>
-            <email>antoine(at)sabot-durand.net</email>
-            <organization>Agorava</organization>
-            <organizationUrl>http://agorava.org</organizationUrl>
-            <roles>
-                <role>Tech Lead</role>
-                <role>Developer</role>
-            </roles>
-            <timezone>CET</timezone>
-        </developer>
-    </developers>
+			<dependency>
+				<groupId>org.jboss.shrinkwrap.resolver</groupId>
+				<artifactId>shrinkwrap-resolver-bom</artifactId>
+				<version>${shrinkwrap-resolver.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
 
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven-surefire-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>${maven-jar-plugin.version}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-        <plugins>
-            <!-- Compiles Java code to class files -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>${arquillian.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
 
-            <plugin>
-                <groupId>com.atlassian.maven.plugins</groupId>
-                <artifactId>maven-jgitflow-plugin</artifactId>
-                <version>${maven-jgitflow-plugin.version}</version>
-                <configuration>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <noFeatureBuild>true</noFeatureBuild>
-                </configuration>
-            </plugin>
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-6.0</artifactId>
+				<version>${jboss-javaee-6.0.version}</version>
+				<type>pom</type>
+				<scope>provided</scope>
+			</dependency>
 
-        </plugins>
-    </build>
+			<dependency>
+				<groupId>org.jboss.arquillian.container</groupId>
+				<artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
+				<version>${arquillian-weld-ee-embedded.version}</version>
+				<scope>test</scope>
+			</dependency>
 
-    <profiles>
-        <profile>
-            <!-- The default profile skips all tests, though you can tune
-                it to run just unit tests based on a custom pattern -->
-            <!-- Seperate profiles are provided for running all tests, including
-                Arquillian tests that execute in the specified container -->
-            <id>default</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+			<dependency>
+				<groupId>org.apache.openwebbeans.arquillian</groupId>
+				<artifactId>owb-arquillian-standalone</artifactId>
+				<version>${owb-arquillian-standalone.version}</version>
+				<scope>test</scope>
+			</dependency>
 
+			<dependency>
+				<groupId>org.jboss.shrinkwrap.resolver</groupId>
+				<artifactId>shrinkwrap-resolver-depchain</artifactId>
+				<version>${shrinkwrap-resolver.version}</version>
+				<scope>test</scope>
+				<type>pom</type>
+			</dependency>
 
-        <profile>
-            <!-- use this profile to compile and test Agorava with Apache OpenWebBeans -->
-            <id>owb</id>
+			<dependency>
+				<groupId>org.jboss.arquillian.junit</groupId>
+				<artifactId>arquillian-junit-container</artifactId>
+				<version>${arquillian.version}</version>
+				<scope>test</scope>
+			</dependency>
 
-            <properties>
-                <arquillian>OpenWebBeans</arquillian>
-            </properties>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${slf4j-simple.version}</version>
+				<scope>test</scope>
+			</dependency>
 
+			<!-- OWB specific dependencies-->
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-atinject_1.0_spec</artifactId>
+				<version>${geronimo-atinject-1.0-spec.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-jcdi_1.0_spec</artifactId>
+				<version>${geronimo-jcdi-1.0-spec.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-interceptor_1.1_spec</artifactId>
+				<version>${geronimo-interceptor-1.1-spec.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.openwebbeans</groupId>
+				<artifactId>openwebbeans-impl</artifactId>
+				<version>${owb.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.openwebbeans</groupId>
+				<artifactId>openwebbeans-spi</artifactId>
+				<version>${owb.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.openwebbeans</groupId>
+				<artifactId>openwebbeans-resource</artifactId>
+				<version>${owb.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.openwebbeans</groupId>
+				<artifactId>openwebbeans-web</artifactId>
+				<version>${owb.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.openwebbeans</groupId>
+				<artifactId>openwebbeans-jsf</artifactId>
+				<version>${owb.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.xbean</groupId>
+				<artifactId>xbean-finder-shaded</artifactId>
+				<version>${xbean-finder.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<!--
+				 We currently need this for the CDI test container to emulate the @SessionScoped.
+				 TODO: Finally this should not be necessary anymore.
+			 -->
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-servlet_3.0_spec</artifactId>
+				<version>${geronimo-servlet-3.0-spec.version}</version>
+				<scope>provided</scope>
+			</dependency>
 
-            <dependencies>
-                <!-- OWB specific dependencies-->
-                <dependency>
-                    <groupId>org.apache.geronimo.specs</groupId>
-                    <artifactId>geronimo-atinject_1.0_spec</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.geronimo.specs</groupId>
-                    <artifactId>geronimo-jcdi_1.0_spec</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.geronimo.specs</groupId>
-                    <artifactId>geronimo-interceptor_1.1_spec</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.openwebbeans</groupId>
-                    <artifactId>openwebbeans-impl</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.openwebbeans</groupId>
-                    <artifactId>openwebbeans-spi</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.openwebbeans</groupId>
-                    <artifactId>openwebbeans-resource</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.geronimo.specs</groupId>
-                    <artifactId>geronimo-servlet_3.0_spec</artifactId>
-                </dependency>
+		</dependencies>
+	</dependencyManagement>
 
+	<scm>
+		<connection>scm:git:git://github.com/agorava/agorava-parent.git</connection>
+		<developerConnection>scm:git:git@github.com:agorava/agorava-parent.git</developerConnection>
+		<url>http://github.com/agorava/agorava-parent</url>
+		<tag>HEAD</tag>
+	</scm>
 
-                <dependency>
-                    <groupId>org.apache.openwebbeans.arquillian</groupId>
-                    <artifactId>owb-arquillian-standalone</artifactId>
-                </dependency>
-            </dependencies>
-        </profile>
-
-        <profile>
-            <id>weld-1.x</id>
-            <!-- use this profile to compile and test Agorava with Weld 1 -->
-
-            <properties>
-                <arquillian>weld-ee-embedded-1.1</arquillian>
-                <weld.version>${weld-core-1.version}</weld.version>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.spec</groupId>
-                    <artifactId>jboss-javaee-6.0</artifactId>
-                    <type>pom</type>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.weld</groupId>
-                    <artifactId>weld-core</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </dependency>
-            </dependencies>
-
-        </profile>
-
-        <profile>
-            <id>weld-2.x</id>
-
-            <properties>
-                <arquillian>weld-ee-embedded-1.1</arquillian>
-                <weld.version>${weld-core-2.version}</weld.version>
-                <cdi.version>${cdi-1-1.version}</cdi.version>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.spec</groupId>
-                    <artifactId>jboss-javaee-6.0</artifactId>
-                    <type>pom</type>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.arquillian.container</groupId>
-                    <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.weld</groupId>
-                    <artifactId>weld-core</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </dependency>
-            </dependencies>
-
-        </profile>
-
-        <profile>
-            <id>release-profile</id>
-            <activation>
-                <property>
-                    <name>performRelease</name>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven-source-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
+	<developers>
+		<developer>
+			<name>Antoine Sabot-Durand</name>
+			<url>http://twitter.com/antoine_sd</url>
+			<email>antoine(at)sabot-durand.net</email>
+			<organization>Agorava</organization>
+			<organizationUrl>http://agorava.org</organizationUrl>
+			<roles>
+				<role>Tech Lead</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>CET</timezone>
+		</developer>
+	</developers>
 
 
-                    <!-- Generate javadoc artifacts -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven-javadoc-plugin.version}</version>
-                        <configuration>
-                            <stylesheet>maven</stylesheet>
-                            <detectOfflineLinks>false</detectOfflineLinks>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${maven-jar-plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<!-- Compiles Java code to class files -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
 
-                    </plugin>
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-jgitflow-plugin</artifactId>
+				<version>${maven-jgitflow-plugin.version}</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<noFeatureBuild>true</noFeatureBuild>
+				</configuration>
+			</plugin>
 
-                    <!-- Sign project artifacts -->
+		</plugins>
+	</build>
 
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${maven-gpg-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-maven-plugin</artifactId>
-                        <version>${nexus-maven-plugin.version}</version>
-                        <configuration>
-                            <auto>true</auto>
-                            <description>[nexus-maven-plugin] closing
-                                repository after release:perform
-                            </description>
-                        </configuration>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>buildnumber-maven-plugin</artifactId>
-                        <version>${buildnumber-maven-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>validate-scm</id>
-                                <goals>
-                                    <goal>create</goal>
-                                </goals>
-                                <!-- Disabled, doesn't support git -->
-                                <phase>none</phase>
-                                <configuration>
-                                    <doUpdate>true</doUpdate>
-                                    <doCheck>true</doCheck>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <inherited>true</inherited>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+	<profiles>
+		<profile>
+			<!-- The default profile skips all tests, though you can tune
+				it to run just unit tests based on a custom pattern -->
+			<!-- Seperate profiles are provided for running all tests, including
+				Arquillian tests that execute in the specified container -->
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
 
-    </profiles>
+		<profile>
+			<!-- use this profile to compile and test Agorava with Apache OpenWebBeans -->
+			<id>owb</id>
+
+			<properties>
+				<arquillian>OpenWebBeans</arquillian>
+			</properties>
+
+
+			<dependencies>
+				<!-- OWB specific dependencies-->
+				<dependency>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-atinject_1.0_spec</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-jcdi_1.0_spec</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-interceptor_1.1_spec</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-impl</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-spi</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-resource</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-servlet_3.0_spec</artifactId>
+				</dependency>
+
+
+				<dependency>
+					<groupId>org.apache.openwebbeans.arquillian</groupId>
+					<artifactId>owb-arquillian-standalone</artifactId>
+				</dependency>
+			</dependencies>
+		</profile>
+
+		<profile>
+			<id>weld-1.x</id>
+			<!-- use this profile to compile and test Agorava with Weld 1 -->
+
+			<properties>
+				<arquillian>weld-ee-embedded-1.1</arquillian>
+				<weld.version>${weld-core-1.version}</weld.version>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.spec</groupId>
+					<artifactId>jboss-javaee-6.0</artifactId>
+					<type>pom</type>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.arquillian.container</groupId>
+					<artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.weld</groupId>
+					<artifactId>weld-core</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-simple</artifactId>
+				</dependency>
+			</dependencies>
+
+		</profile>
+
+		<profile>
+			<id>weld-2.x</id>
+
+			<properties>
+				<arquillian>weld-ee-embedded-1.1</arquillian>
+				<weld.version>${weld-core-2.version}</weld.version>
+				<cdi.version>${cdi-1-1.version}</cdi.version>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.spec</groupId>
+					<artifactId>jboss-javaee-6.0</artifactId>
+					<type>pom</type>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.arquillian.container</groupId>
+					<artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.weld</groupId>
+					<artifactId>weld-core</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-simple</artifactId>
+				</dependency>
+			</dependencies>
+
+		</profile>
+
+		<profile>
+			<id>release-profile</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>${maven-source-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+
+					<!-- Generate javadoc artifacts -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>${maven-javadoc-plugin.version}</version>
+						<configuration>
+							<stylesheet>maven</stylesheet>
+							<detectOfflineLinks>false</detectOfflineLinks>
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+
+					</plugin>
+
+					<!-- Sign project artifacts -->
+
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${maven-gpg-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-maven-plugin</artifactId>
+						<version>${nexus-maven-plugin.version}</version>
+						<configuration>
+							<auto>true</auto>
+							<description>[nexus-maven-plugin] closing
+								repository after release:perform
+							</description>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>buildnumber-maven-plugin</artifactId>
+						<version>${buildnumber-maven-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>validate-scm</id>
+								<goals>
+									<goal>create</goal>
+								</goals>
+								<!-- Disabled, doesn't support git -->
+								<phase>none</phase>
+								<configuration>
+									<doUpdate>true</doUpdate>
+									<doCheck>true</doCheck>
+								</configuration>
+							</execution>
+						</executions>
+						<inherited>true</inherited>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+
+	</profiles>
 
 </project>
