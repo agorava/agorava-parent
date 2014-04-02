@@ -45,7 +45,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
+		<maven-surefire-plugin.skip>false</maven-surefire-plugin.skip>
 		<maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
 		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
 		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
@@ -315,6 +315,34 @@
 				</configuration>
 			</plugin>
 
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+					<systemPropertyVariables>
+						<arquillian.launch>${arquillian}</arquillian.launch>
+						<arquillian>${arquillian}</arquillian>
+					</systemPropertyVariables>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>surefire-it</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>${maven-surefire-plugin.skip}</skip>
+							<redirectTestOutputToFile>true</redirectTestOutputToFile>
+							<trimStackTrace>false</trimStackTrace>
+							<printSummary>true</printSummary>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -328,16 +356,9 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
+			<properties>
+				<maven-surefire-plugin.skip>true</maven-surefire-plugin.skip>
+			</properties>
 		</profile>
 
 
