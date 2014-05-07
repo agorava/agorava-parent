@@ -45,6 +45,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.source.version>1.6</java.source.version>
+		<java.target.version>1.6</java.target.version>
 		<maven-surefire-plugin.skip>false</maven-surefire-plugin.skip>
 		<maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
 		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
@@ -300,8 +302,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
 				</configuration>
 			</plugin>
 
@@ -447,12 +449,14 @@
 				<arquillian>weld-ee-embedded-1.1</arquillian>
 				<weld.version>${weld-core-2.version}</weld.version>
 				<cdi.version>${cdi-1-1.version}</cdi.version>
+				<java.version>1.7</java.version>
 			</properties>
 			<dependencies>
 				<dependency>
-					<groupId>org.jboss.spec</groupId>
-					<artifactId>jboss-javaee-6.0</artifactId>
-					<type>pom</type>
+					<groupId>javax</groupId>
+					<artifactId>javaee-api</artifactId>
+					<version>7.0</version>
+					<scope>provided</scope>
 				</dependency>
 				<dependency>
 					<groupId>org.jboss.arquillian.container</groupId>
