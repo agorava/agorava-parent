@@ -26,7 +26,7 @@
 	<packaging>pom</packaging>
 	<name>Agorava Parent Project</name>
 	<description>This artefact provides all dependencies used in all Agorava module</description>
-	<url>http://agorava.org</url>
+	<url>http://www.agorava.org</url>
 
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
@@ -92,13 +92,11 @@
 		<geronimo-jta-1.1-spec.version>1.1.1</geronimo-jta-1.1-spec.version>
 		<shrinkwrap-resolver.version>2.1.0</shrinkwrap-resolver.version>
 
-
 		<xbean-finder.version>3.13</xbean-finder.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-
 			<dependency>
 				<groupId>org.jboss.weld</groupId>
 				<artifactId>weld-core</artifactId>
@@ -273,6 +271,17 @@
 			<organizationUrl>http://agorava.org</organizationUrl>
 			<roles>
 				<role>Tech Lead</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>CET</timezone>
+		</developer>
+		<developer>
+			<name>Werner Keil</name>
+			<url>http://twitter.com/wernerkeil</url>
+			<email>werner(at)catmedia.us</email>
+			<organization>Agorava</organization>
+			<organizationUrl>http://agorava.org</organizationUrl>
+			<roles>
 				<role>Developer</role>
 			</roles>
 			<timezone>CET</timezone>
