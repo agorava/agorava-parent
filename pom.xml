@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  ~ Copyright 2014 Agorava
+  ~ Copyright 2014-2016 Agorava
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
-		<version>7</version>
+		<version>9</version>
 	</parent>
 
 	<licenses>
@@ -64,7 +64,6 @@
 		<cdi-1.version>1.0-SP4</cdi-1.version>
 		<cdi-1-1.version>1.1</cdi-1-1.version>
 		<cdi.version>${cdi-1.version}</cdi.version>
-
 
 		<maven-jgitflow-plugin.version>1.0-m1.1</maven-jgitflow-plugin.version>
 
@@ -124,7 +123,6 @@
 				<scope>test</scope>
 			</dependency>
 
-
 			<dependency>
 				<groupId>org.jboss.shrinkwrap.resolver</groupId>
 				<artifactId>shrinkwrap-resolver-bom</artifactId>
@@ -132,7 +130,6 @@
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
-
 
 			<dependency>
 				<groupId>org.jboss.arquillian</groupId>
@@ -254,6 +251,19 @@
 
 		</dependencies>
 	</dependencyManagement>
+	
+	<distributionManagement>
+		<repository>
+			<id>bintray-release</id>
+			<name>oss-jfrog-artifactory-release</name>
+			<url>https://oss.jfrog.org/artifactory/oss-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>bintray-snapshot</id>
+			<name>oss-jfrog-artifactory-snapshot</name>
+			<url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<scm>
 		<connection>scm:git:git://github.com/agorava/agorava-parent.git</connection>
@@ -326,7 +336,6 @@
 				</configuration>
 			</plugin>
 
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -372,7 +381,6 @@
 			</properties>
 		</profile>
 
-
 		<profile>
 			<!-- use this profile to compile and test Agorava with Apache OpenWebBeans -->
 			<id>owb</id>
@@ -380,7 +388,6 @@
 			<properties>
 				<arquillian>OpenWebBeans</arquillian>
 			</properties>
-
 
 			<dependencies>
 				<!-- OWB specific dependencies-->
@@ -412,7 +419,6 @@
 					<groupId>org.apache.geronimo.specs</groupId>
 					<artifactId>geronimo-servlet_3.0_spec</artifactId>
 				</dependency>
-
 
 				<dependency>
 					<groupId>org.apache.openwebbeans.arquillian</groupId>
@@ -448,7 +454,6 @@
 					<artifactId>slf4j-simple</artifactId>
 				</dependency>
 			</dependencies>
-
 		</profile>
 
 		<profile>
@@ -480,7 +485,6 @@
 					<artifactId>slf4j-simple</artifactId>
 				</dependency>
 			</dependencies>
-
 		</profile>
 
 		<profile>
@@ -492,7 +496,6 @@
 			</activation>
 			<build>
 				<plugins>
-
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
@@ -506,7 +509,6 @@
 							</execution>
 						</executions>
 					</plugin>
-
 
 					<!-- Generate javadoc artifacts -->
 					<plugin>
@@ -525,11 +527,9 @@
 								</goals>
 							</execution>
 						</executions>
-
 					</plugin>
 
 					<!-- Sign project artifacts -->
-
 
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -545,7 +545,6 @@
 							</execution>
 						</executions>
 					</plugin>
-
 
 					<plugin>
 						<groupId>org.sonatype.plugins</groupId>
@@ -582,8 +581,5 @@
 				</plugins>
 			</build>
 		</profile>
-
-
 	</profiles>
-
 </project>
