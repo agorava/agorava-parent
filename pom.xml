@@ -83,7 +83,7 @@
 		<geronimo-jpa-2.0-spec.version>1.1</geronimo-jpa-2.0-spec.version>
 		<geronimo-jta-1.1-spec.version>1.1.1</geronimo-jta-1.1-spec.version>
 		<shrinkwrap-resolver.version>2.1.0</shrinkwrap-resolver.version>
-
+		<commons-lang.version>3.4</commons-lang.version>
 		<xbean-finder.version>3.13</xbean-finder.version>
 	</properties>
 
@@ -230,6 +230,11 @@
 				<artifactId>xbean-finder-shaded</artifactId>
 				<version>${xbean-finder.version}</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang.version}</version>
 			</dependency>
 			<!-- We currently need this for the CDI test container to emulate the 
 				@SessionScoped. TODO: Finally this should not be necessary anymore. -->
