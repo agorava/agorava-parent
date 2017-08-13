@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- ~ Copyright 2014-2016 Agorava ~ ~ Licensed under the Apache License, 
+<!-- ~ Copyright 2014-2017 Agorava ~ ~ Licensed under the Apache License, 
 	Version 2.0 (the "License"); ~ you may not use this file except in compliance 
 	with the License. ~ You may obtain a copy of the License at ~ ~ http://www.apache.org/licenses/LICENSE-2.0 
 	~ ~ Unless required by applicable law or agreed to in writing, software ~ 
@@ -14,7 +14,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.agorava</groupId>
 	<artifactId>agorava-parent</artifactId>
-	<version>0.7.1</version>
+	<version>0.7.2-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 	<name>Agorava Parent Project</name>
