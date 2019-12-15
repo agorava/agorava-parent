@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- ~ Copyright 2014-2017 Agorava ~ ~ Licensed under the Apache License, 
+<!-- ~ Copyright 2014-2019 Agorava ~ ~ Licensed under the Apache License, 
 	Version 2.0 (the "License"); ~ you may not use this file except in compliance 
 	with the License. ~ You may obtain a copy of the License at ~ ~ http://www.apache.org/licenses/LICENSE-2.0 
 	~ ~ Unless required by applicable law or agreed to in writing, software ~ 
@@ -14,7 +14,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.agorava</groupId>
 	<artifactId>agorava-parent</artifactId>
-	<version>0.7.2-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 	<name>Agorava Parent Project</name>
@@ -38,8 +38,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.source.version>1.6</java.source.version>
-		<java.target.version>1.6</java.target.version>
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
 		<maven-surefire-plugin.skip>false</maven-surefire-plugin.skip>
 		<maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
 		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
@@ -54,8 +54,8 @@
 		<!-- Weld version in WildFly 8.0.0.Final -->
 		<weld-core-2.version>2.1.2.Final</weld-core-2.version>
 		<slf4j-simple.version>1.6.4</slf4j-simple.version>
-		<cdi-1.version>1.0-SP4</cdi-1.version>
-		<cdi-1-1.version>1.1</cdi-1-1.version>
+		<cdi-1.version>1.2</cdi-1.version>
+		<cdi-2.version>2.0</cdi-2.version>
 		<cdi.version>${cdi-1.version}</cdi.version>
 
 		<maven-jgitflow-plugin.version>1.0-m1.1</maven-jgitflow-plugin.version>
@@ -64,7 +64,7 @@
 		<mockito.version>1.9.0</mockito.version>
 		<junit.version>4.12</junit.version>
 
-		<jboss-javaee-6.0.version>1.0.0.Final</jboss-javaee-6.0.version>
+		<jboss-javaee-8.0.version>1.0.4.Final</jboss-javaee-8.0.version>
 		<arquillian-weld-ee-embedded.version>1.0.0.CR8</arquillian-weld-ee-embedded.version>
 		<owb-arquillian-standalone.version>1.2.4</owb-arquillian-standalone.version>
 
@@ -134,8 +134,8 @@
 
 			<dependency>
 				<groupId>org.jboss.spec</groupId>
-				<artifactId>jboss-javaee-6.0</artifactId>
-				<version>${jboss-javaee-6.0.version}</version>
+				<artifactId>jboss-javaee-8.0</artifactId>
+				<version>${jboss-javaee-8.0.version}</version>
 				<type>pom</type>
 				<scope>provided</scope>
 			</dependency>
@@ -492,7 +492,7 @@
 			<dependencies>
 				<dependency>
 					<groupId>org.jboss.spec</groupId>
-					<artifactId>jboss-javaee-6.0</artifactId>
+					<artifactId>jboss-javaee-8.0</artifactId>
 					<type>pom</type>
 				</dependency>
 				<dependency>
