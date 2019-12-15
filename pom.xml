@@ -9,7 +9,8 @@
 	License for the specific language governing permissions and ~ limitations 
 	under the License. -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.agorava</groupId>
@@ -49,10 +50,9 @@
 		<nexus-maven-plugin.version>2.1</nexus-maven-plugin.version>
 		<buildnumber-maven-plugin.version>1.2</buildnumber-maven-plugin.version>
 		<maven-source-plugin.version>2.4</maven-source-plugin.version>
-		<!-- Weld version in AS 7.1.1 -->
 		<weld-core-1.version>1.1.5.Final</weld-core-1.version>
-		<!-- Weld version in WildFly 8.0.0.Final -->
 		<weld-core-2.version>2.1.2.Final</weld-core-2.version>
+		<weld-core-3.version>3.0.3.Final</weld-core-3.version>
 		<slf4j-simple.version>1.6.4</slf4j-simple.version>
 		<cdi-1.version>1.2</cdi-1.version>
 		<cdi-2.version>2.0</cdi-2.version>
@@ -540,6 +540,40 @@
 				</dependency>
 			</dependencies>
 		</profile>
+
+		<profile>
+			<id>weld-3.x</id>
+
+			<properties>
+				<arquillian>weld-ee-embedded-1.1</arquillian>
+				<weld.version>${weld-core-3.version}</weld.version>
+				<cdi.version>${cdi-2.version}</cdi.version>
+				<java.version>1.8</java.version>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>javax</groupId>
+					<artifactId>javaee-api</artifactId>
+					<version>8.0</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.arquillian.container</groupId>
+					<artifactId>arquillian-weld-embedded</artifactId>
+					<version>2.0.0.Final</version>
+					<scope>test</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.weld</groupId>
+					<artifactId>weld-core</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-simple</artifactId>
+				</dependency>
+			</dependencies>
+		</profile>
+
 
 		<profile>
 			<id>release-profile</id>
